@@ -1,4 +1,5 @@
-import './assets/main.css'
+import './assets/tailwind.css'
+import "preline/preline";
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
