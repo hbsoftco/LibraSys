@@ -2,6 +2,6 @@
 
 <template>
   <main class="container m-auto">
-    
+      <h1>Salam az dashboard</h1>
   </main>
 </template>

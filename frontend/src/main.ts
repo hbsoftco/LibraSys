@@ -1,4 +1,4 @@
-import './assets/tailwind.css'
+import '@/assets/styles/tailwind.css'
 import "preline/preline";
 
 import { createApp } from 'vue'
