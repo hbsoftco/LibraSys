@@ -1,7 +1,7 @@
 <template>
    <div class="">
     <PanelSidebar />
-    <div class="bg-[#f5f5f5]">
+    <div class="bg-[#f5f5f5] dark:bg-gray-800 ltr:ml-[260px] rtl:mr-[260px]">
         <PanelTopNav />
         <div class="">
             <router-view></router-view>
