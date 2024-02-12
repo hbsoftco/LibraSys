@@ -8,7 +8,7 @@
 </script>
 
 <template>
-  <header class="mx-4 bg-white dark:bg-gray-800 rounded-t-lg p-4 shadow-sm">
+  <header class="mx-6 bg-white dark:bg-gray-800 rounded-t-lg p-4 shadow-sm">
     <div class="flex justify-center items-center">
       <p class="text-center text-[15px] text-primary-800">
         {{ '© hbsoft - Developed with Love :)' }}

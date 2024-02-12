@@ -16,6 +16,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@preline/overlay": "^2.0.2",
     "pinia": "^2.1.7",
     "preline": "^2.0.3",
     "vue": "^3.4.15",

@@ -1,4 +1,5 @@
 import '@/assets/styles/tailwind.css'
+import '@/assets/styles/fonts.css'
 import "preline/preline";
 
 import { createApp } from 'vue'
