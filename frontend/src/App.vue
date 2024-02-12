@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
-import { useStore } from '@/store/store'
-import FadeTransition from '@/components/transitions/FadeTransition.vue'
 import { watchEffect } from 'vue'
+import { RouterView } from 'vue-router'
+
+import { useStore } from '@/store/store'
+
+import FadeTransition from '@/components/transitions/FadeTransition.vue'
 
 const store = useStore()
 
