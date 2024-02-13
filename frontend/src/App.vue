@@ -1,26 +1,23 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { onMounted } from 'vue'
 import { RouterView } from 'vue-router'
-
+import { type IStaticMethods } from 'preline/preline'
 import { useStore } from '@/store/store'
-
 import FadeTransition from '@/components/transitions/FadeTransition.vue'
 
 const store = useStore()
 
-
-  import { type IStaticMethods } from "preline/preline";
-  declare global {
-    interface Window {
-      HSStaticMethods: IStaticMethods;
-    }
+declare global {
+  interface Window {
+    HSStaticMethods: IStaticMethods
   }
+}
 
-  onMounted(() => {
-    setTimeout(() => {
-      window.HSStaticMethods.autoInit();
-    }, 100)
-  });
+onMounted(() => {
+  setTimeout(() => {
+    window.HSStaticMethods.autoInit()
+  }, 100)
+})
 </script>
 
 <template>

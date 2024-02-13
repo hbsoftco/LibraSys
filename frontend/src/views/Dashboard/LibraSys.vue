@@ -38,6 +38,7 @@
         </div>
       </div>
       <div class="col-span-12 xl:col-span-4">
+        <i class="isax isax-square"></i>
         <BooksGenre />
       </div>
     </div>

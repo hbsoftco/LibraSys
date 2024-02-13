@@ -1,0 +1,56 @@
+[
+  {
+    "id": "dashboard",
+    "title": "Dashboard",
+    "link": "/",
+    "icon": "dashboard",
+    "subMenus": [],
+    "isActive": false
+  },
+  {
+    "id": "users",
+    "title": "Users",
+    "icon": "users",
+    "link": "",
+    "subMenus": [
+      {
+        "id": "users_list",
+        "title": "Users List",
+        "link": "/users",
+        "links": [],
+        "isActive": false
+      },
+      {
+        "id": "new_user",
+        "title": "New User",
+        "link": "/users/new",
+        "links": [],
+        "isActive": false
+      }
+    ],
+    "isActive": false
+  },
+  {
+    "id": "books",
+    "title": "Books",
+    "icon": "book",
+    "link": "",
+    "subMenus": [
+      {
+        "id": "users_list",
+        "title": "Users List",
+        "link": "/users",
+        "links": [],
+        "isActive": false
+      },
+      {
+        "id": "new_user",
+        "title": "New User",
+        "link": "/users/new",
+        "links": [],
+        "isActive": false
+      }
+    ],
+    "isActive": false
+  }
+]
