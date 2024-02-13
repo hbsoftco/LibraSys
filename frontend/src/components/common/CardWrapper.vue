@@ -1,11 +1,11 @@
 <template>
   <div>
     <div
-      class="w-full rounded-lg shadow-sm hover:shadow-md transition duration-200"
-      :class="[props.bg, props.padding]"
-    >
-      <slot />
-    </div>
+    class="w-full rounded-lg shadow-sm hover:shadow-md transition duration-200"
+    :class="[props.bg, props.padding]"
+  >
+    <slot />
+  </div>
   </div>
 </template>
 
@@ -19,4 +19,5 @@ const props = withDefaults(defineProps<InputProps>(), {
   padding: 'p-7',
   bg: 'bg-white'
 })
+
 </script>

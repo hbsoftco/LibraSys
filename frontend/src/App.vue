@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { watchEffect } from 'vue'
+import { onMounted } from 'vue';
 import { RouterView } from 'vue-router'
 
 import { useStore } from '@/store/store'
@@ -8,7 +8,19 @@ import FadeTransition from '@/components/transitions/FadeTransition.vue'
 
 const store = useStore()
 
-watchEffect(() => {})
+
+  import { type IStaticMethods } from "preline/preline";
+  declare global {
+    interface Window {
+      HSStaticMethods: IStaticMethods;
+    }
+  }
+
+  onMounted(() => {
+    setTimeout(() => {
+      window.HSStaticMethods.autoInit();
+    }, 100)
+  });
 </script>
 
 <template>

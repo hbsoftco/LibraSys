@@ -11,17 +11,10 @@
               :icon="item.icon"
             ></BoxState>
           </div>
-          <!-- <div class="col-span-12 xl:col-span-4" *ngFor="let item of data; let i = index">
-            <app-e-state-box
-              [price]="item.price"
-              [state]="item.state"
-              [percentage]="item.percentage"
-              [icon]="item.icon"
-            ></app-e-state-box>
-          </div> -->
         </div>
         <div class="grid grid-cols-12 gap-6 mb-4">
           <div class="col-span-12 xl:col-span-12">
+            <!-- <apexchart width="500" type="bar" :options="data.options" :series="data.series"></apexchart> -->
             <!-- <app-audience-overview></app-audience-overview> -->
           </div>
         </div>
@@ -44,12 +37,16 @@
           </div>
         </div>
       </div>
+      <div class="col-span-12 xl:col-span-4">
+        <BooksGenre />
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import BoxState from '@/components/pages/Dashboard/BoxState.vue'
+import BooksGenre from '@/components/pages/Dashboard/BooksGenre.vue'
 import { reactive } from 'vue'
 
 const data = reactive({
@@ -72,6 +69,6 @@ const data = reactive({
       state: false,
       percentage: '1%'
     }
-  ]
+  ],
 })
 </script>
