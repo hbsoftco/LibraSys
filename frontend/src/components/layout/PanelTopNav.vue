@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <header class="mx-6 bg-white z-50 rounded-b-lg p-4 mb-4 shadow-sm">
+    <header class="mx-6 bg-white z-50 rounded-b-lg p-4 mb-6 shadow-sm">
       <div class="flex justify-between items-center">
         <div class="flex items-center">
           <div class="mr-2">
