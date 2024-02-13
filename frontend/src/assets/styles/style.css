@@ -1,0 +1,7 @@
+.router-link-exact-active {
+  @apply text-gray-700 bg-gray-100;
+}
+
+.remove-active-link .router-link-exact-active {
+  @apply bg-white;
+}

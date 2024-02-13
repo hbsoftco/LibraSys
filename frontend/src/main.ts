@@ -1,5 +1,6 @@
 import '@/assets/styles/tailwind.css'
 import '@/assets/styles/fonts.css'
+import '@/assets/styles/style.css'
 import "preline/preline";
 
 import VueApexCharts from "vue3-apexcharts";
