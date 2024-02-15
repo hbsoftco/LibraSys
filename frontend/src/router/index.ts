@@ -34,6 +34,22 @@ const routes = [
           title: 'New User'
         }
       },
+      {
+        path: 'books',
+        name: 'books-list',
+        component: () => import('@/views/Books/BooksList.vue'),
+        meta: {
+          title: 'Books List'
+        }
+      },
+      {
+        path: 'books/new',
+        name: 'new-book',
+        component: () => import('@/views/Books/NewBook.vue'),
+        meta: {
+          title: 'New Book'
+        }
+      },
     ]
   }
 ]

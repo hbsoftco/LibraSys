@@ -37,7 +37,14 @@
     "link": "",
     "subMenus": [
       {
-        "id": "addNewBook",
+        "id": "books_list",
+        "title": "booksList",
+        "link": "/books",
+        "links": [],
+        "isActive": false
+      },
+      {
+        "id": "add_new_book",
         "title": "addNewBook",
         "link": "/books/new",
         "links": [],
