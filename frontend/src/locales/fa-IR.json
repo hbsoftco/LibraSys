@@ -1,7 +1,8 @@
 {
-    "dashboard": "داشبورد",
-    "users": "کاربران",
-    "usersList": "لیست کاربران",
-    "newUser": "کاربر جدید",
-    "books": "کتاب‌ها"
+  "dashboard": "داشبورد",
+  "users": "کاربران",
+  "usersList": "لیست کاربران",
+  "newUser": "کاربر جدید",
+  "books": "کتاب‌ها",
+  "addNewUser": "ثبت کاربر جدید"
 }

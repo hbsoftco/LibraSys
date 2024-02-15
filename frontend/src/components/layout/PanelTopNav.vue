@@ -12,6 +12,7 @@
           </div>
           <div class="relative min-w-72">
             <input
+              id="navbarSearch"
               type="text"
               class="py-2.5 w-full pl-10 text-sm outline-none font-normal bg-gray-100 border-none rounded-full"
               placeholder="Search here ..."

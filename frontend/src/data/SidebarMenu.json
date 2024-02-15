@@ -35,22 +35,7 @@
     "title": "books",
     "icon": "book",
     "link": "",
-    "subMenus": [
-      {
-        "id": "users_list",
-        "title": "Users List",
-        "link": "/users",
-        "links": [],
-        "isActive": false
-      },
-      {
-        "id": "new_user",
-        "title": "New User",
-        "link": "/users/new",
-        "links": [],
-        "isActive": false
-      }
-    ],
+    "subMenus": [],
     "isActive": false
   }
 ]

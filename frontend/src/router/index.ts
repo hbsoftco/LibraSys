@@ -21,19 +21,15 @@ const routes = [
       {
         path: 'users',
         name: 'users-list',
-        // Lazily load the Dashboard component
         component: () => import('@/views/Users/UsersList.vue'),
-        // Metadata for the route
         meta: {
-          title: 'Users List'
+          title: 'User List'
         }
       },
       {
         path: 'users/new',
         name: 'new-user',
-        // Lazily load the Dashboard component
         component: () => import('@/views/Users/NewUser.vue'),
-        // Metadata for the route
         meta: {
           title: 'New User'
         }

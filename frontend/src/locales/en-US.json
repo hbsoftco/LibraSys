@@ -1,7 +1,17 @@
 {
-    "dashboard": "Dashboard",
-    "users": "Users",
-    "usersList": "Users List",
-    "newUser": "New User",
-    "books": "Books"
+  "dashboard": "Dashboard",
+  "users": "Users",
+  "usersList": "Users List",
+  "newUser": "New User",
+  "books": "Books",
+  "addNewUser": "Create New Member",
+  "name": "Name",
+  "family": "Family",
+  "email": "Email",
+  "mobile": "Mobile",
+  "password": "Password",
+  "username": "Username",
+  "access": "Access Level",
+  "address": "Address",
+  "loading": "Loading"
 }
