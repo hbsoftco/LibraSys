@@ -54,7 +54,7 @@
                         <th scope="col" class="th">
                           {{ $t('email') }}
                         </th>
-                        <th scope="col" class="th">
+                        <th scope="col" class="th text-center">
                           {{ $t('action') }}
                         </th>
                       </tr>
@@ -62,16 +62,30 @@
                     <tbody>
                       <tr class="tr">
                         <td class="td">
-                          <div></div>
+                          <div class="flex items-center">
+                            <img
+                              class="w-11 h-11 mr-4 rounded-full shadow-md"
+                              src="@/assets/images/avatars/user.png"
+                              alt="hossein"
+                            />
+                            <div>
+                              <p
+                                class="font-headingFontFamily text-primary-900 text-sm font-semibold"
+                              >
+                                Hossein Bajan
+                              </p>
+                              <p class="text-gray-400 text-xs text-left">@hbsoft</p>
+                            </div>
+                          </div>
                         </td>
                         <td class="td">
-                          <div></div>
+                          <div>09330000000</div>
                         </td>
                         <td class="td">
-                          <div></div>
+                          <div>Admin</div>
                         </td>
                         <td class="td">
-                          <div></div>
+                          <div>hossein.bajan@gmail.com</div>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
                           <button
