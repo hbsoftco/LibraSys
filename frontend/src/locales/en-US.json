@@ -17,5 +17,9 @@
   "female": "Female",
   "male": "Male",
   "sex": "Sex",
+  "members": "Members",
+  "user": "User",
+  "role": "Role",
+  "action": "Action",
   "loading": "Loading"
 }
