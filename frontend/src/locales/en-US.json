@@ -13,5 +13,9 @@
   "username": "Username",
   "access": "Access Level",
   "address": "Address",
+  "addNewBook": "Create New Book",
+  "female": "Female",
+  "male": "Male",
+  "sex": "Sex",
   "loading": "Loading"
 }

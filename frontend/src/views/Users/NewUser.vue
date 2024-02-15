@@ -7,6 +7,35 @@
       <div class="col-span-12 xl:col-span-12">
         <CardWrapper title="addNewUser">
           <div class="grid grid-cols-12 gap-4">
+            <div class="col-span-12 xl:col-span-12">
+              <div class="relative inline-block">
+                <img
+                  v-if="!state.url && state.sex === true"
+                  :src="userAvatar"
+                  class="w-24 h-24 rounded-md"
+                />
+                <img
+                  v-if="!state.url && state.sex === false"
+                  :src="femaleAvatar"
+                  class="w-24 h-24 rounded-md"
+                />
+                <img v-if="state.url" :src="state.url" class="w-24 h-24 rounded-md" />
+                <input
+                  ref="fileInput"
+                  style="display: none"
+                  type="file"
+                  accept="image/*"
+                  @change="handleFileChange"
+                />
+                <button
+                  :disabled="state.btnLoading"
+                  @click="openFileDialog"
+                  class="bg-primary rounded-full shadow-md p-1.5 absolute bottom-1 right-2"
+                >
+                  <CameraIcon color="#fcfcfc" :width="20" :height="20" />
+                </button>
+              </div>
+            </div>
             <div class="col-span-12 xl:col-span-6">
               <div :class="{ error: v$.username.$errors.length }">
                 <label
@@ -95,6 +124,7 @@
                   >{{ $t('access') }}</label
                 >
                 <select
+                  id="access"
                   v-model="state.access"
                   class="py-3 px-4 block w-full border outline-none bg-white border-gray-200 rounded-lg text-sm focus:border-primary focus:ring-primary disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                 >
@@ -156,6 +186,45 @@
               </div>
             </div>
             <!-- PASSWORD -->
+            <div class="col-span-12 xl:col-span-6">
+              <label
+                for="password"
+                class="block text-sm font-medium mb-1 text-gray-700 dark:text-white"
+                >{{ $t('sex') }}</label
+              >
+              <div class="flex gap-x-6">
+                <div class="flex">
+                  <input
+                    type="radio"
+                    name="hs-radio-group"
+                    class="shrink-0 mt-0.5 border-gray-200 rounded-full text-primary focus:ring-primary disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
+                    id="hs-radio-group-1"
+                    checked
+                    @change="updateSex(false)"
+                  />
+                  <label
+                    for="hs-radio-group-1"
+                    class="text-sm text-gray-500 ms-2 dark:text-gray-400"
+                    >{{ $t('female') }}</label
+                  >
+                </div>
+                <div class="flex">
+                  <input
+                    type="radio"
+                    name="hs-radio-group"
+                    class="shrink-0 mt-0.5 border-gray-200 rounded-full text-primary focus:ring-primary disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
+                    id="hs-radio-group-2"
+                    @change="updateSex(true)"
+                  />
+                  <label
+                    for="hs-radio-group-2"
+                    class="text-sm text-gray-500 ms-2 dark:text-gray-400"
+                    >{{ $t('male') }}</label
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- SEX -->
             <div class="col-span-12 xl:col-span-12">
               <div :class="{ error: v$.address.$errors.length }">
                 <label
@@ -202,9 +271,13 @@
 </template>
 
 <script lang="ts">
+import userAvatar from '@/assets/images/avatars/user.png'
+import femaleAvatar from '@/assets/images/avatars/female-user.png'
+import CameraIcon from '@/components/icons/CameraIcon.vue'
+import EyePasswordIcon from '@/components/icons/EyePasswordIcon.vue'
+
 import CardWrapper from '@/components/common/CardWrapper.vue'
 import BreadCrumb from '@/components/layout/BreadCrumb.vue'
-import EyePasswordIcon from '@/components/icons/EyePasswordIcon.vue'
 import { reactive, ref, computed } from 'vue'
 
 import { useVuelidate } from '@vuelidate/core'
@@ -213,6 +286,7 @@ import { required, email, numeric, minLength, maxLength, helpers } from '@vuelid
 export default {
   components: {
     EyePasswordIcon,
+    CameraIcon,
     CardWrapper,
     BreadCrumb
   },
@@ -223,9 +297,15 @@ export default {
       { name: 'New User', link: '' }
     ])
 
+    const fileInput = ref<HTMLInputElement | null>(null)
+
     const state = reactive({
       loading: false,
+      btnLoading: false,
+      url: '',
 
+      photo: '',
+      sex: false,
       name: '',
       family: '',
       access: '',
@@ -237,10 +317,35 @@ export default {
       password: ''
     })
 
+    const updateSex = (sex: boolean) => {
+      state.sex = sex
+    }
+
+    const openFileDialog = () => {
+      if (fileInput.value) {
+        fileInput.value.click()
+      }
+    }
+
+    const handleFileChange = (event: any) => {
+      const file = event.target.files[0]
+      if (file) {
+        if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
+          return
+        }
+        // Do something with the selected file
+        const reader = new FileReader()
+        reader.onload = () => {
+          state.url = String(reader.result)
+        }
+        reader.readAsDataURL(file)
+      }
+    }
+
     const submitForm = () => {
       v$.value.$touch()
 
-      // console.log(v$.value.$error);
+      console.log(state.sex);
       console.log(v$.value.$errors)
 
       // console.log(i18n.locale)
@@ -248,6 +353,10 @@ export default {
       if (v$.value.$error) {
         // Error
         return
+      }
+
+      const form = {
+        
       }
 
       // Success
@@ -264,6 +373,7 @@ export default {
 
     const rules = computed(() => {
       return {
+        sex: { required },
         name: { required },
         family: { required },
         access: { required },
@@ -290,8 +400,14 @@ export default {
     const v$ = useVuelidate(rules, state)
 
     return {
+      userAvatar,
+      femaleAvatar,
+      handleFileChange,
+      openFileDialog,
       submitForm,
+      updateSex,
       breadcrumb,
+      fileInput,
       state,
       v$
     }

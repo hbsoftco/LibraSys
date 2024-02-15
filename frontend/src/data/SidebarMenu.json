@@ -35,7 +35,15 @@
     "title": "books",
     "icon": "book",
     "link": "",
-    "subMenus": [],
+    "subMenus": [
+      {
+        "id": "addNewBook",
+        "title": "addNewBook",
+        "link": "/books/new",
+        "links": [],
+        "isActive": false
+      }
+    ],
     "isActive": false
   }
 ]
