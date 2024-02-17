@@ -59,7 +59,7 @@ const props = withDefaults(defineProps<InputProps>(), {
 
 const hoveredIcon = ref('s')
 
-const changeIcon = (iconType: string): void => {
-  hoveredIcon.value = iconType
-}
+// const changeIcon = (iconType: string): void => {
+//   hoveredIcon.value = iconType
+// }
 </script>
